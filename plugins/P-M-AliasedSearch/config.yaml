@@ -1,0 +1,15 @@
+name: P-M-AliasedSearch
+version: 1.00
+description: This plugin creates aliases to search-parameter.
+
+plack_middlewares:
+  - name: MT::AliasedSearch
+    options:
+      - key: recipes
+        value:
+          - from: food
+            to: search=food&IncludeBlogs=1&limit=20
+          - from: event
+            to: search=event&IncludeBlogs=1&limit=20
+    apply_to:
+      - new_search
